@@ -11,7 +11,7 @@ Se è un array: stampa la sua lunghezza
 Se è una Promise: attendi che si risolva e stampa il valore del resolve.*/
 
 async function fetchData() {
-  const values = ["ciao", 42, true, false, undefined, null, [], {}];
+  const values = ["ciao", 42, true, false, undefined, null, [1, 2, 3, 4], {}];
 
   const randomIndex = Math.floor(Math.random() * values.length);
 
@@ -35,16 +35,13 @@ if (typeof valoreRicevuto === "string") {
   } else {
     console.log("no")
   }
-} else if (typeof valoreRicevuto === null) {
+} else if (valoreRicevuto === null) {
   console.log("il dato è vuoto")
-}
-
-
-
-else {
+} else if (Array.isArray(valoreRicevuto)) {
+  console.log("L'array contiene", valoreRicevuto.length, "elementi")
+} else {
   console.log("tipo non supportato")
 }
-
 
 
 
