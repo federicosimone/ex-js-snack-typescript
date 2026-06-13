@@ -1,3 +1,6 @@
+import type { Dipendente } from "./assets/aliasType";
+
+
 /*🏆 Snack 1
 Hai ricevuto un dato generico da un'API, ma non sai di che tipo sia… 
 Il tuo compito è controllare il tipo del dato e stampare il valore in modo corretto.
@@ -43,24 +46,17 @@ if (typeof valoreRicevuto === "string") {
   console.log("tipo non supportato")
 }
 
+const dipendente: Dipendente = {
+  nome: "Federico",
+  cognome: "Simone",
+  annoNascita: 1998,
+  sesso: "m",
+  anniDiServizio: [2014, 2015, 2017, 2018],
+  emailAziendale: "federico.simone@utimac.com",
+  contratto: "indeterminato"
+}
 
-
-/*🏆 Snack 2
-Crea un type alias Dipendente che rappresenta un lavoratore con i seguenti dati:
-
-nome → stringa
-cognome → stringa
-annoNascita → numero
-sesso → Può essere solo "m" o "f".
-anniDiServizio (array di numeri, es. [2014, 2015, 2017, 2018])
-🎯 BONUS
-Il type alias Dipendente, ha anche i seguenti dati:
-
-emailAziendale → Email assegnata al dipendente (non si può modificare)
-contratto → Specifica il tipo di contratto del dipendente, con valori limitati a “indeterminato”, “determinato” o “freelance”.*/
-
-
-
+console.log(dipendente)
 
 
 /*🏆 Snack 3
