@@ -35,7 +35,13 @@ if (typeof valoreRicevuto === "string") {
   } else {
     console.log("no")
   }
-} else {
+} else if (typeof valoreRicevuto === null) {
+  console.log("il dato è vuoto")
+}
+
+
+
+else {
   console.log("tipo non supportato")
 }
 
