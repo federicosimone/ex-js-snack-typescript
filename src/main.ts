@@ -10,8 +10,34 @@ Se è null: stampa “Il dato è vuoto”
 Se è un array: stampa la sua lunghezza
 Se è una Promise: attendi che si risolva e stampa il valore del resolve.*/
 
+async function fetchData() {
+  const values = ["ciao", 42, true, false, undefined, null, [], {}];
 
+  const randomIndex = Math.floor(Math.random() * values.length);
 
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(values[randomIndex]);
+
+    }, 1000);
+  });
+}
+
+const valoreRicevuto: unknown = await fetchData()
+console.log(valoreRicevuto)
+if (typeof valoreRicevuto === "string") {
+  console.log(valoreRicevuto.toUpperCase())
+} else if (typeof valoreRicevuto === "number") {
+  console.log(valoreRicevuto * 2)
+} else if (typeof valoreRicevuto === "boolean") {
+  if (valoreRicevuto === true) {
+    console.log("sì")
+  } else {
+    console.log("no")
+  }
+} else {
+  console.log("tipo non supportato")
+}
 
 
 
